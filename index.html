@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .login-box { border: 1px solid #ccc; padding: 20px; border-radius: 8px; box-shadow: 2px 2px 10px #eee; }
+        input { padding: 8px; margin-right: 5px; }
+        button { padding: 8px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h3>Privater Bereich</h3>
+        <p>Bitte gib den Zugangscode ein:</p>
+        <input type="password" id="pw_field" placeholder="Code eingeben...">
+        <button onclick="login()">Go</button>
+        <p id="error" style="color: red; display: none;">Seite nicht gefunden. Code korrekt?</p>
+    </div>
+
+    <script>
+        function login() {
+            const code = document.getElementById('pw_field').value;
+            if (code) {
+                // Leitet zu "deincode.html" weiter
+                window.location.href = code + ".html";
+            }
+        }
+
+        // Erlaubt das Drücken der Enter-Taste
+        document.getElementById("pw_field").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") { login(); }
+        });
+    </script>
+
+</body>
+</html>
