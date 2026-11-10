@@ -258,6 +258,12 @@
             max-width: 400px;
             width: 90%;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .modal-content.wide {
+            max-width: 1200px;
         }
 
         .modal-content h3 {
@@ -506,7 +512,7 @@
     </div>
 
     <div id="impressumModal" class="modal">
-        <div class="modal-content" style="max-width: 1200px;">
+        <div class="modal-content wide" style="max-width: 1200px; max-height: calc(100vh - 40px); overflow-y: auto; font-size: 0.95em; padding: 18px;">
             <h3>Impressum</h3>
             <div style="text-align: left; line-height: 1.6;">
                 <p><strong>Angaben gemäß § 5 TMG</strong></p>
