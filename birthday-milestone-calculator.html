@@ -609,6 +609,16 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
                 });
             }
 
+            const milestoneTypeSelect = document.getElementById('milestoneType');
+            if (milestoneTypeSelect) {
+                milestoneTypeSelect.addEventListener('change', function() {
+                    // Sofort neu berechnen, sobald ein Geburtsdatum gesetzt ist
+                    if (birthdateInput && birthdateInput.value) {
+                        calculate();
+                    }
+                });
+            }
+
             const nameInput = document.getElementById('nameInput');
             if (nameInput) {
                 nameInput.addEventListener('keypress', function(e) {
