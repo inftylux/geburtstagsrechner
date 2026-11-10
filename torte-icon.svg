@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffe4e6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hintergrund: abgerundetes Quadrat mit Farbverlauf -->
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#bg)"/>
+
+  <!-- Teller -->
+  <ellipse cx="256" cy="412" rx="158" ry="30" fill="#ffffff" opacity="0.25"/>
+
+  <!-- unterer Tortenboden -->
+  <rect x="100" y="306" width="312" height="96" rx="18" fill="url(#cream)"/>
+  <rect x="100" y="306" width="312" height="34" rx="17" fill="#fda4af"/>
+
+  <!-- oberer Tortenboden -->
+  <rect x="148" y="212" width="216" height="94" rx="18" fill="#fff1f2"/>
+  <rect x="148" y="212" width="216" height="34" rx="17" fill="#fda4af"/>
+
+  <!-- Kirschen auf der Torte -->
+  <circle cx="188" cy="206" r="14" fill="#ef4444"/>
+  <circle cx="256" cy="206" r="14" fill="#ef4444"/>
+  <circle cx="324" cy="206" r="14" fill="#ef4444"/>
+
+  <!-- Kerzen -->
+  <rect x="230" y="132" width="16" height="66" rx="8" fill="#ffffff"/>
+  <rect x="266" y="132" width="16" height="66" rx="8" fill="#fde68a"/>
+
+  <!-- Dochte -->
+  <rect x="236" y="112" width="4" height="22" rx="2" fill="#92400e"/>
+  <rect x="272" y="112" width="4" height="22" rx="2" fill="#92400e"/>
+
+  <!-- Flammen -->
+  <ellipse cx="238" cy="98" rx="11" ry="17" fill="#fbbf24"/>
+  <ellipse cx="238" cy="102" rx="6" ry="10" fill="#fef3c7"/>
+  <ellipse cx="274" cy="98" rx="11" ry="17" fill="#fbbf24"/>
+  <ellipse cx="274" cy="102" rx="6" ry="10" fill="#fef3c7"/>
+</svg>
