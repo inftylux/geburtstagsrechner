@@ -491,10 +491,10 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Tag</th>
-                        <th>Alter (Jahre)</th>
+                        <th>Tage</th>
+                        <th>Jahre</th>
                         <th>Datum</th>
-                        <th>Status</th>
+                        <th>Wann?</th>
                     </tr>
                 </thead>
                 <tbody id="milestones">
@@ -673,7 +673,7 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
                 <td><strong>Geburt</strong></td>
                 <td>0.0</td>
                 <td>${birthdate.toLocaleDateString('de-DE')}</td>
-                <td>vor ${diffDays} T.</td>
+                <td>vor ${diffDays} Tagen</td>
             `;
             milestonesTable.appendChild(birthdayRow);
 
@@ -713,7 +713,7 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
                 
                 if (milestoneDate < referenceDate) {
                     const daysAgo = Math.floor((referenceDate - milestoneDate) / (1000 * 60 * 60 * 24));
-                    status = `vor ${daysAgo} T.`;
+                    status = `vor ${daysAgo} Tagen`;
                     rowClass = isMajorMilestone ? 'past major-milestone' : 'past';
                 } else if (milestoneDate.toDateString() === referenceDate.toDateString()) {
                     status = '🎉 HEUTE!';
@@ -721,7 +721,7 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
                     nextMilestoneFound = true;
                 } else {
                     const daysUntil = Math.floor((milestoneDate - referenceDate) / (1000 * 60 * 60 * 24));
-                    status = `in ${daysUntil} T.`;
+                    status = `in ${daysUntil} Tagen`;
                     
                     if (!nextMilestoneFound && milestoneDate > referenceDate) {
                         rowClass = isMajorMilestone ? 'major-milestone' : 'upcoming';
