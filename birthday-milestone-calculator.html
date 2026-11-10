@@ -371,7 +371,7 @@
         @media (max-width: 600px) {
             body {
                 padding: 4px;
-                padding-top: calc(4px + env(safe-area-inset-top));
+                padding-top: calc(20px + env(safe-area-inset-top));
                 padding-bottom: calc(4px + env(safe-area-inset-bottom));
                 align-items: flex-start;
             }
@@ -420,14 +420,14 @@
             }
 
             table {
-                font-size: 0.85em;
+                font-size: 0.8em;
                 display: block;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
             }
 
             th, td {
-                padding: 10px 8px;
+                padding: 6px 5px;
                 white-space: nowrap;
             }
 
@@ -491,7 +491,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Meilenstein</th>
+                        <th>Tag</th>
                         <th>Alter (Jahre)</th>
                         <th>Datum</th>
                         <th>Status</th>
@@ -672,13 +672,8 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
             birthdayRow.innerHTML = `
                 <td><strong>Geburt</strong></td>
                 <td>0.0</td>
-                <td>${birthdate.toLocaleDateString('de-DE', { 
-                    weekday: 'short', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                })}</td>
-                <td>Vor ${diffDays} Tagen</td>
+                <td>${birthdate.toLocaleDateString('de-DE')}</td>
+                <td>vor ${diffDays} T.</td>
             `;
             milestonesTable.appendChild(birthdayRow);
 
@@ -718,7 +713,7 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
                 
                 if (milestoneDate < referenceDate) {
                     const daysAgo = Math.floor((referenceDate - milestoneDate) / (1000 * 60 * 60 * 24));
-                    status = `Vor ${daysAgo} Tagen`;
+                    status = `vor ${daysAgo} T.`;
                     rowClass = isMajorMilestone ? 'past major-milestone' : 'past';
                 } else if (milestoneDate.toDateString() === referenceDate.toDateString()) {
                     status = '🎉 HEUTE!';
@@ -726,7 +721,7 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
                     nextMilestoneFound = true;
                 } else {
                     const daysUntil = Math.floor((milestoneDate - referenceDate) / (1000 * 60 * 60 * 24));
-                    status = `In ${daysUntil} Tagen`;
+                    status = `in ${daysUntil} T.`;
                     
                     if (!nextMilestoneFound && milestoneDate > referenceDate) {
                         rowClass = isMajorMilestone ? 'major-milestone' : 'upcoming';
@@ -738,7 +733,7 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
 
                 row.className = rowClass;
                 
-                let milestoneLabel = `${i}. Tag`;
+                let milestoneLabel = `${i}`;
                 if (milestoneType === 'both' && milestone.type === 'Schnapszahl') {
                     milestoneLabel += ' 🍺';
                 }
@@ -746,12 +741,7 @@ https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
                 row.innerHTML = `
                     <td>${milestoneLabel}</td>
                     <td>${ageInYears}</td>
-                    <td>${milestoneDate.toLocaleDateString('de-DE', { 
-                        weekday: 'short', 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                    })}</td>
+                    <td>${milestoneDate.toLocaleDateString('de-DE')}</td>
                     <td>${status}</td>
                 `;
 
