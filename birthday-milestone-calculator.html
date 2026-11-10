@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>1000er-Tage-Geburtstagsrechner</title>
 
     <!-- Favicon (Browser-Tab) -->
@@ -13,7 +13,8 @@
 
     <!-- iOS Web-App (standalone App-Modus) -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1e3a8a">
     <meta name="apple-mobile-web-app-title" content="1000er-Tage-Rechner">
     <style>
         * {
@@ -27,6 +28,8 @@
             background: linear-gradient(135deg, #1e3a8a 0%, #06b6d4 100%);
             min-height: 100vh;
             padding: 20px;
+            padding-top: calc(20px + env(safe-area-inset-top));
+            padding-bottom: calc(20px + env(safe-area-inset-bottom));
             display: flex;
             justify-content: center;
             align-items: center;
@@ -364,6 +367,8 @@
         @media (max-width: 600px) {
             body {
                 padding: 4px;
+                padding-top: calc(4px + env(safe-area-inset-top));
+                padding-bottom: calc(4px + env(safe-area-inset-bottom));
                 align-items: flex-start;
             }
 
